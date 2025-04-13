@@ -1,0 +1,14 @@
+footer {
+  background-color: $darkBlue;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  span {
+    color: $mainColor;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: "Dancing Script", cursive;
+  }
+}

@@ -1,0 +1,24 @@
+.portfolio {
+  background-color: $grey;
+  .box {
+    background-color: white;
+    .text h3 {
+      font-size: 25px;
+    }
+  }
+  .more {
+    padding: 15px 50px;
+    border: 2px solid $mainColor;
+    color: $mainColor;
+    width: fit-content;
+    margin: 30px auto;
+    border-radius: 5px;
+    transition: $transition;
+    font-size: 20px;
+    background-color: white;
+    &:hover {
+      color: white;
+      background-color: $mainColor;
+    }
+  }
+}

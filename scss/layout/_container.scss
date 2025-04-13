@@ -1,0 +1,20 @@
+@import "abstracts/breakpoints";
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @include breakpoint(sm) {
+    width: 750px;
+  }
+  @include breakpoint(md) {
+    width: 970px;
+  }
+  @include breakpoint(lg) {
+    width: 1170px;
+  }
+  @include breakpoint(xl) {
+    width: 1300px;
+  }
+}

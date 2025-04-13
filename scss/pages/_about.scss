@@ -1,0 +1,24 @@
+.about .container {
+  display: grid;
+  gap: 60px;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.box {
+  position: relative;
+  p {
+    line-height: 2.4;
+    &:first-child {
+      font-weight: 900;
+      color: $darkBlue;
+    }
+    span {
+      display: block;
+      width: 70%;
+      height: 4px;
+      background-color: var(--mainColor);
+      margin: 40px 0;
+    }
+  }
+}

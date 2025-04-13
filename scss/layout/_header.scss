@@ -1,0 +1,54 @@
+header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: $boxShadow;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 120px;
+    }
+
+    nav {
+      position: relative;
+
+      .menu {
+        cursor: pointer;
+        font-size: 20px;
+        transition: $transition;
+
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        width: 200px;
+        right: 0;
+        top: calc(100% - 10px);
+        box-shadow: $boxShadow;
+        z-index: 1;
+        background-color: white;
+      }
+
+      &:hover ul {
+        display: block;
+      }
+
+      ul li a {
+        padding: 15px;
+        text-align: center;
+        transition: $transition;
+
+        &:hover {
+          background-color: rgb(207, 202, 202);
+        }
+      }
+    }
+  }
+}
