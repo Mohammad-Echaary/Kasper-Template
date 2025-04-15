@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: $gap;
 }
 
 @mixin abs-center {
@@ -35,4 +36,10 @@
 
 @mixin transition($props: all, $time: 0.3s, $ease: ease-in-out) {
   transition: $props $time $ease;
+}
+
+@mixin motion($id) {
+  @keyframes #{$id} {
+    @content;
+  }
 }

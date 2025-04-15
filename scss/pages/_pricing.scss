@@ -1,0 +1,22 @@
+.pricing {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  .container {
+    display: grid;
+    gap: 40px;
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    text-align: center;
+    .box {
+      background-color: #fcfcfc;
+      .head {
+        border-top: 1px solid $mainColor;
+        border-bottom: 1px solid $mainColor;
+      }
+    }
+  }
+}

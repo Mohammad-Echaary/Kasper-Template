@@ -1,42 +1,85 @@
-@import "abstracts/breakpoints";
-.services .container .box {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  .childBox {
-    display: flex;
-    justify-content: space-between;
+.services {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  > .container {
+    margin-bottom: 100px;
+    display: grid;
     gap: 40px;
-    @media (max-width: 767px) {
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+    .box {
+      @include d-flex(60px);
       flex-direction: column;
-      align-items: center;
+      box-shadow: $boxShadow;
+      padding: 20px;
+      transition: $transition;
+      position: relative;
       text-align: center;
-    }
-    i {
-      color: $mainColor;
-      font-size: 40px;
-    }
-
-    .text h4 {
-      margin: 0;
-      font-size: 26px;
+      @include breakpoint(sm) {
+        flex-direction: row;
+        text-align: left;
+      }
+      cursor: pointer;
+      &:hover {
+        transform: translateY(-10px);
+      }
+      i {
+        font-size: 40px;
+        color: $mainColor;
+      }
+      .text {
+        h3 {
+          font-size: 22px;
+          padding-bottom: 10px;
+          color: $mainColor;
+          margin: 0;
+        }
+      }
     }
   }
-  &:last-child {
-    position: relative;
+  .design {
     overflow: hidden;
-    img {
-      height: 420px;
-      width: 700px;
-    }
-    &::before {
+    background-image: url("../../images/design-features.jpg");
+    background-size: cover;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .img {
+      display: none;
+      @include breakpoint(sm) {
+        display: block;
+      }
+      width: 200px;
       position: absolute;
-      content: "";
-      right: 0;
-      top: 0;
-      width: 100px;
-      height: 100%;
-      background-color: $darkBlue;
+      bottom: -40px;
+    }
+    .aside {
+      position: relative;
+      color: white;
+      margin-left: auto;
+      background-color: $transparentColor;
+      padding: 20px;
+      @include breakpoint(sm) {
+        width: 50%;
+      }
+      h4 {
+        font-size: 22px;
+      }
+      ul {
+        li {
+          padding-left: 30px;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+          a {
+            color: white !important;
+          }
+        }
+      }
     }
   }
 }

@@ -1,24 +1,96 @@
 .portfolio {
-  background-color: $grey;
-  .box {
-    background-color: white;
-    .text h3 {
-      font-size: 25px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  > ul {
+    @include d-flex();
+    justify-content: center;
+    margin-bottom: 70px;
+    li {
+      a {
+        padding: 10px 20px;
+        transition: $transition;
+        color: black;
+        border: 2px solid $mainColor;
+        &:hover {
+          background-color: $mainColor;
+          color: white;
+        }
+        &.active {
+          background-color: $mainColor;
+          color: white;
+        }
+      }
     }
   }
-  .more {
-    padding: 15px 50px;
-    border: 2px solid $mainColor;
-    color: $mainColor;
-    width: fit-content;
-    margin: 30px auto;
-    border-radius: 5px;
-    transition: $transition;
-    font-size: 20px;
-    background-color: white;
-    &:hover {
-      color: white;
-      background-color: $mainColor;
+  > .container {
+    gap: 40px 20px;
+    .box {
+      .img {
+        transition: $transition;
+      }
+      overflow: hidden;
+      box-shadow: $boxShadow;
+      border-radius: 5px;
+      padding: 15px;
+      position: relative;
+      transition: $transition;
+      cursor: pointer;
+      .description {
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+        padding: 0 10px;
+        transition: $transition;
+        h5 {
+          color: $mainColor;
+        }
+      }
+      &:hover {
+        .img {
+          transform: scale(1.2);
+        }
+        .description {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  .button {
+    margin: 40px auto;
+  }
+  .video {
+    .container {
+      position: relative;
+      overflow: hidden;
+      height: 600px;
+      .content {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $transparentColor;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        h3 {
+          text-transform: uppercase;
+          font-size: 30px;
+        }
+        p {
+          color: white;
+        }
+        a {
+          background-color: black;
+          color: white;
+          width: fit-content;
+          padding: 10px 20px;
+          margin: 10px auto;
+          border-radius: 5px;
+        }
+      }
     }
   }
 }

@@ -1,24 +1,55 @@
-.about .container {
-  display: grid;
-  gap: 60px;
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-.box {
-  position: relative;
-  p {
-    line-height: 2.4;
-    &:first-child {
-      font-weight: 900;
-      color: $darkBlue;
-    }
-    span {
-      display: block;
-      width: 70%;
-      height: 4px;
-      background-color: var(--mainColor);
-      margin: 40px 0;
+.about {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  .stats {
+    background-image: url("../../images/stats.png");
+    position: relative;
+    .container {
+      position: relative;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      display: grid;
+      gap: 20px;
+      @include breakpoint(sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .box {
+        background-color: $transparentColor;
+        @include flex-center(20px);
+        flex-direction: column;
+        padding: 20px;
+        color: white;
+        border-radius: 5px;
+        .icon {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: black;
+          @include flex-center();
+        }
+      }
+      h2 {
+        font-size: 40px;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        color: white;
+      }
+      @include breakpoint(md) {
+        margin-top: 200px;
+        &::after {
+          position: absolute;
+          content: url("../../images/about.png");
+          top: -200px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: -1;
+        }
+      }
     }
   }
 }

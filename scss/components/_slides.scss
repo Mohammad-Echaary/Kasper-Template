@@ -1,0 +1,17 @@
+.slides {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include flex-center(8px);
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    &:nth-child(2) {
+      background-color: $mainColor;
+    }
+  }
+}

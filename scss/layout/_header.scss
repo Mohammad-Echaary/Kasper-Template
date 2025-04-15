@@ -1,53 +1,112 @@
 header {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  box-shadow: $boxShadow;
-
+  background-image: url("../../images/landing.jpg");
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
   .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .logo {
-      width: 120px;
-    }
-
+    position: relative;
     nav {
+      @include d-flex;
       position: relative;
-
       .menu {
-        cursor: pointer;
-        font-size: 20px;
-        transition: $transition;
-
+        @include flex-center(30px);
+        .bar {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          cursor: pointer;
+          color: white;
+          font-size: 30px;
+          @include breakpoint(sm) {
+            display: none;
+          }
+        }
+        ul {
+          transition: $transition;
+          z-index: 1;
+          position: absolute;
+          top: calc(100% - 20px);
+          right: -100%;
+          width: 200px;
+          padding: 15px;
+          background-color: white;
+          @include breakpoint(sm) {
+            width: auto;
+            position: relative;
+            background-color: transparent;
+            padding: 0;
+            right: 0;
+            @include flex-center();
+          }
+          li {
+            a {
+              padding: 10px;
+              transition: $transition;
+              color: black;
+              &:hover {
+                color: $mainColor;
+              }
+              @include breakpoint(sm) {
+                padding: 20px 10px;
+                color: white;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                  color: $mainColor;
+                  border-bottom-color: $mainColor;
+                }
+              }
+            }
+          }
+        }
+        .search {
+          display: none;
+          @include breakpoint(sm) {
+            font-size: 25px;
+            color: white;
+            border-left: 1px solid white;
+            padding: 5px 15px;
+            @include flex-center();
+          }
+        }
         &:hover {
-          color: $hoverColor;
+          ul {
+            right: 0;
+          }
         }
       }
-
-      ul {
-        display: none;
-        position: absolute;
-        width: 200px;
-        right: 0;
-        top: calc(100% - 10px);
-        box-shadow: $boxShadow;
-        z-index: 1;
-        background-color: white;
+    }
+  }
+  .content {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: $transparentColor;
+    @include breakpoint(sm) {
+      width: 60%;
+    }
+    .text {
+      @include breakpoint(sm) {
+        max-width: 600px;
+        padding-left: 80px;
+        margin-left: auto;
+        text-align: left;
       }
-
-      &:hover ul {
-        display: block;
-      }
-
-      ul li a {
-        padding: 15px;
-        text-align: center;
-        transition: $transition;
-
-        &:hover {
-          background-color: rgb(207, 202, 202);
+      padding: 15px;
+      text-align: center;
+      h2 {
+        line-height: 1.7;
+        @include breakpoint(sm) {
+          font-size: 25px;
+          font-weight: 400;
         }
+        @include breakpoint(md) {
+          font-size: 30px;
+        }
+      }
+      p {
+        color: white;
       }
     }
   }

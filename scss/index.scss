@@ -14,11 +14,38 @@
 @import "components/button";
 @import "components/header";
 @import "components/over";
+@import "components/arrows";
+@import "components/slides";
 
-@import "pages/ideas";
 @import "pages/services";
 @import "pages/portfolio";
 @import "pages/about";
-@import "pages/contact";
+@import "pages/skills";
+@import "pages/pricing";
 
 @import "utilities/helpers";
+
+.quote {
+  background-image: url("../images/quote.jpg");
+  background-size: cover;
+  position: relative;
+  .container {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #efbf04;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.6;
+    @include breakpoint(sm) {
+      font-size: 40px;
+    }
+    text-align: center;
+
+    p {
+      color: white;
+    }
+  }
+}

@@ -1,29 +1,48 @@
-@import "abstracts/breakpoints";
-
 .header {
-  margin-bottom: 100px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 100px;
   h1 {
-    @include breakpoint(sm) {
-      font-size: 100px;
-    }
-    letter-spacing: -5px;
-    text-align: center;
-    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: 5px;
+    font-weight: 400;
     margin: 0;
-    color: rgba(44, 71, 85, 0.1);
-    font-size: 80px;
+  }
+  span {
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: $mainColor;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 2px solid $mainColor;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-color: white;
+      animation: head 4s infinite forwards linear;
+      @include motion(head) {
+        0% {
+          left: 0;
+        }
+        50% {
+          left: calc(100% - 15px);
+        }
+        100% {
+          left: 0;
+        }
+      }
+    }
   }
   p {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  @include breakpoint(sm) {
-    font-size: 14px;
+    margin: 0;
   }
 }
